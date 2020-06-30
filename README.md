@@ -1,10 +1,10 @@
 # value-as-flag
 
-This is a Github Action that will take a value and parse it turning it into a boolean flag setting an output of the normalized boolean value for the value.
+This is a Github Action that will take a value and parse it turning it into a boolean flag setting an output of the normalized boolean value for the output.
 
-The reason you might want to do this is to ensure that the provided value is converted in to a normalized boolean form so that checking and validation inside GitHub Actions Workflow jobs are consistent.
+The reason you might want to do this is to ensure that the provided value is converted in to a _normalized boolean form_ so that checking and validation inside GitHub Actions Workflow jobs are consistent.
 
-This action will also cater for situations where you may want to default to a result when the provided value is not specified, is empty or is compatible with the boolean parsing values that are defined in this action.
+This action will also cater for situations where you may want to _default_ to a result when the provided value is not specified, is empty or is incompatible with the boolean parsing values that are internalized in this action.
 
 A reason for this action to exist is to make it simple to have a cross platform approach to using values are flags in all workflows without having to fall back to using the various shells available for Windows, MacOS and Linux environments.
 
@@ -41,6 +41,8 @@ Note that the `default` input value is constrained to only allow `true` or `fals
 
 You might use a GitHub Secret as a flag in your workflows that you need to check for, catering for the possibility that it may not be set.
 
+_Note: if you use the GitHub Secrets system to host a boolean value, then the Action runner will attempt to mask all occurences of the string value that is set in that secret in the output. What this means in practice is that if you set a secret value of `no` then words like `not` will end up being masked to `***t`._
+
 ```yaml
 - name: Parse secret value as flag
   id: build_container_flag
@@ -50,6 +52,6 @@ You might use a GitHub Secret as a flag in your workflows that you need to check
     default: false
 
 - name: Build Container
-  if: ${{ steps.build_container_flag.outputs.value }} == 'true'
+  if: steps.build_container_flag.outputs.value == 'true'
   run: docker build .
 ```
