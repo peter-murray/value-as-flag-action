@@ -1,0 +1,27 @@
+name: Test Failure for Action
+
+on: push
+
+jobs:
+  test:
+   name: Test Action
+   runs-on: ubuntu-latest
+   
+   steps:
+    - name: Checkout action
+      uses: actions/checkout@v2
+       
+    - name: Parse value as boolean
+      uses: ./
+      id: value_as_flag
+      with:
+        value: 'false'
+        default: false
+
+    - name: Fail if wrong value
+      if: steps.value_as_flag.outputs.value != 'false'
+      uses: actions/github-script@v2
+      with:
+        script: |
+          console.log("This step should not run");
+          core.setFailed('Flag has not been correctly parsed');

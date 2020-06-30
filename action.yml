@@ -1,0 +1,21 @@
+---
+
+name: Value as Flag
+description: Parses a value to convert it into a boolean flag
+author: peter-murray
+
+inputs:
+  value:
+    description: The secret value that will be checked and turned in to a boolean flag
+
+  default:
+    description: A default setting for the flag if the secret value is not defined
+    default: false
+
+outputs:
+  value:
+    description: The value of the flag that was obtained from the secret as the string 'true' or 'false'
+
+runs:
+  using: node12
+  main: dist/index.js

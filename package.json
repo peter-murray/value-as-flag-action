@@ -1,0 +1,30 @@
+{
+  "name": "value-as-flag-action",
+  "version": "0.0.1",
+  "description": "A GitHub Action that can parse a provided value turning it into a normalized boolean flag",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "mocha",
+    "build": "npx @zeit/ncc build index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peter-murray/value-as-flag-action.git"
+  },
+  "keywords": [
+    "github-actions"
+  ],
+  "author": "peter-murray",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/peter-murray/value-as-flag-action/issues"
+  },
+  "homepage": "https://github.com/peter-murray/value-as-flag-action#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.4"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.0.1"
+  }
+}
