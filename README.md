@@ -1,4 +1,4 @@
-# value-as-flag
+# value-as-flag-action
 
 This is a Github Action that will take a value and parse it turning it into a boolean flag setting an output of the normalized boolean value for the output.
 
@@ -46,7 +46,7 @@ _Note: if you use the GitHub Secrets system to host a boolean value, then the Ac
 ```yaml
 - name: Parse secret value as flag
   id: build_container_flag
-  uses: peter-murray/value-as-flag-action
+  uses: peter-murray/value-as-flag-action@0.0.1
   with:
     value: ${{ secrets.BUILD_CONTAINER }}
     default: false
