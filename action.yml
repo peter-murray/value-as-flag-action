@@ -4,6 +4,10 @@ name: Value as Flag
 description: Parses a value to convert it into a boolean flag
 author: peter-murray
 
+branding:
+  icon: check-square
+  color: green
+
 inputs:
   value:
     description: The secret value that will be checked and turned in to a boolean flag
