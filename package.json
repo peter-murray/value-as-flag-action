@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/peter-murray/value-as-flag-action#readme",
   "dependencies": {
-    "@actions/core": "^1.2.4"
+    "@actions/core": "^1.2.6"
   },
   "devDependencies": {
     "chai": "^4.2.0",
