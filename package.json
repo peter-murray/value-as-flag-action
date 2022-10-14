@@ -1,6 +1,6 @@
 {
   "name": "value-as-flag-action",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A GitHub Action that can parse a provided value turning it into a normalized boolean flag",
   "main": "dist/index.js",
   "scripts": {
